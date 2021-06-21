@@ -13,4 +13,4 @@
   -  Mở auth qua gmail
   -  Đổi file google-services.json
   -  Đổi Instance Link của Database trong FirebaseHelper.java
-- Đăng nhập vào google play của AVD trước rồi mới sử dụng được
+- Đăng nhập vào play store của AVD trước rồi mới sử dụng được
