@@ -1,15 +1,16 @@
-# pusher-chat-android
+# chatPusher
+<img src=https://github.com/ShShee/chatPusher/blob/main/screenshots/src1.png width=300 height=580 /> <img src=https://github.com/ShShee/chatPusher/blob/main/screenshots/src2.png width=300 height=580 /> <img src=https://github.com/ShShee/chatPusher/blob/main/screenshots/src3.png width=300 height=580 /> <img src=https://github.com/ShShee/chatPusher/blob/main/screenshots/database.PNG width=910/> 
 
-A Realtime Chat app using [Pusher](https://pusher.com).
+## Hướng dẫn sử dụng 
 
-<img src=https://raw.githubusercontent.com/emmanuelkehinde/pusher-chat-android/master/screenshots/1.png alt="Pusher Chat" width=300 height=580 /> <img src=https://raw.githubusercontent.com/emmanuelkehinde/pusher-chat-android/master/screenshots/2.png alt="Pusher Chat" width=300 height=580 />
-
-Find the backend for the app written in node.js [here](https://github.com/emmanuelkehinde/pusher-chat-backend)
-
-## How to use
-
-- Follow the instuctions and deploy your backend as instucted [here](https://github.com/emmanuelkehinde/pusher-chat-backend)
-- Clone this repo
-- Paste in your pusher api key in the field provided
-- Paste in your server base url in the field provided
-- Run the app and enjoy!
+- Sử dụng PUSHER riêng (Optional): 
+  - Clone [Backend Node.js](https://github.com/ShShee/chatPusher_backend) về thay PUSHER KEY rồi tạo repos của bản thân up lên heroku 
+  - Vào Constants.java đổi API thành link heroku
+  - Thay PUSHER ID trong hàm onCreate của ChatRoomActivity.java
+- Sử dụng FIREBASE riêng:
+  -  Đổi tên package (cho chắc)
+  -  Nhớ thêm mail support + SHA1 vào firebase project
+  -  Mở auth qua gmail
+  -  Đổi file google-services.json
+  -  Đổi Instance Link của Database trong FirebaseHelper.java
+- Đăng nhập vào play store của AVD trước rồi mới sử dụng được
