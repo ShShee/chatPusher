@@ -1,16 +1,17 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
 
 android {
-    compileSdkVersion 27
-    buildToolsVersion '27.0.3'
+    compileSdkVersion 28
     defaultConfig {
-        applicationId "com.kehinde.pusher_chat_test"
-        minSdkVersion 14
-        targetSdkVersion 27
+        applicationId "com.javahomework.chatPusher"
+        minSdkVersion 16
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary=true
+        multiDexEnabled=true
     }
     buildTypes {
         release {
@@ -18,24 +19,28 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:appcompat-v7:27.1.0'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'org.jetbrains:annotations-java5:15.0'
+    implementation 'com.google.firebase:firebase-firestore:23.0.1'
+    implementation 'com.google.firebase:firebase-database:20.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation('com.android.support.test.espresso:espresso-core:3.0.1', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    implementation 'com.android.support:design:27.1.0'
+    implementation 'com.android.support:design:28.0.0'
 
     //Image Loading
     implementation 'com.squareup.picasso:picasso:2.5.2'
-
-    //View Binding
-    implementation 'com.jakewharton:butterknife:8.6.0'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.6.0'
 
     //Pusher
     implementation 'com.pusher:pusher-java-client:1.5.0'
@@ -43,4 +48,14 @@ dependencies {
     //Networking
     implementation 'com.squareup.retrofit2:retrofit:2.3.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
+
+    //Firebase
+    implementation platform('com.google.firebase:firebase-bom:28.1.0')
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-auth'
+    implementation 'com.google.android.gms:play-services-auth:19.0.0'
+    implementation 'com.google.firebase:firebase-storage'
+
+    implementation("androidx.recyclerview:recyclerview:1.2.1")
+    implementation 'com.android.support:multidex:1.0.3'
 }

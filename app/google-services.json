@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "233641059048",
+    "firebase_url": "https://chat-pusher-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "chat-pusher",
+    "storage_bucket": "chat-pusher.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:233641059048:android:26d115501e896b89c6df5d",
+        "android_client_info": {
+          "package_name": "com.javahomework.chatPusher"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "233641059048-4v6snb7i8um90s4ea6knnk1toao68oom.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.javahomework.chatPusher",
+            "certificate_hash": "3e4b8c199347abbda1234b2d2bfc5bcbba825bd1"
+          }
+        },
+        {
+          "client_id": "233641059048-c0f79ejorcprbnrmn1k88qln2jlrmnhe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0Lidrg6QDG2Lq7k0kQLOV8OKEPNtLTUA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "233641059048-c0f79ejorcprbnrmn1k88qln2jlrmnhe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

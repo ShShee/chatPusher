@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.kehinde.pusher_chat_test.ui.ChatRoomActivity"
+    tools:context="com.javahomework.chatPusher.ui.ChatRoomActivity"
     tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="81dp">
 
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/chat_recycler_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -46,7 +46,7 @@
         app:layout_constraintTop_toTopOf="@+id/fab_send_message"
         android:layout_marginRight="8dp" />
 
-    <android.support.design.widget.FloatingActionButton
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_send_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -72,4 +72,4 @@
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginEnd="27dp" />
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
