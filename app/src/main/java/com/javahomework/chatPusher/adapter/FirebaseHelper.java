@@ -84,6 +84,14 @@ public class FirebaseHelper {
             }
         });
     }
+    public void updateUser(String key,User user,final DataStatus dataStatus) {
+        databaseReference.child(key).setValue(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void unused) {
+                dataStatus.DataIsUpdated();
+            }
+        });
+    }
     public void deleteUser(String key,final  DataStatus dataStatus) {
         databaseReference.child(key).setValue(null).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override

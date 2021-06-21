@@ -34,7 +34,7 @@ import java.util.List;
 public class IntroActivity extends AppCompatActivity implements UserRecyclerAdapter.OnUserListener {
     EditText edt_user_name;
     TextView logged_email,edt_room_name;
-    Button enter,exit,add,delete;
+    Button enter,add,delete,update;
     RecyclerView recyclerView;
     List<User> listUser;
     String chosenName="";
@@ -50,9 +50,9 @@ public class IntroActivity extends AppCompatActivity implements UserRecyclerAdap
         edt_user_name=(EditText) findViewById(R.id.edt_user_name) ;
         logged_email=(TextView) findViewById(R.id.textView);
         enter=(Button) findViewById(R.id.btn_enter);
-        exit=(Button) findViewById(R.id.btn_exit);
         add=(Button) findViewById(R.id.btn_add);
         delete=(Button) findViewById(R.id.btn_delete);
+        update=(Button) findViewById(R.id.btn_update);
         recyclerView=(RecyclerView) findViewById(R.id.user_recycler_view);
 
         if (getIntent()!=null) {
@@ -90,6 +90,34 @@ public class IntroActivity extends AppCompatActivity implements UserRecyclerAdap
                     User user=new User(edt_user_name.getText().toString(),randomString(10));
                     System.out.println(user.toString());
                     new FirebaseHelper(getIntent().getStringExtra(Constants.USER_ID)).addUser(logged_email.getText().toString(),user, new FirebaseHelper.DataStatus() {
+                        @Override
+                        public void DataIsLoaded(List<User> users, List<String> keys) {
+
+                        }
+
+                        @Override
+                        public void DataIsInserted() {
+
+                        }
+
+                        @Override
+                        public void DataIsUpdated() {
+
+                        }
+
+                        @Override
+                        public void DataIsDeleted() {
+
+                        }
+                    });
+                }
+            });
+
+            update.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    User user=new User(edt_user_name.getText().toString(),chosenRoom);
+                    new FirebaseHelper((getIntent().getStringExtra(Constants.USER_ID))).updateUser(chosenKey, user, new FirebaseHelper.DataStatus() {
                         @Override
                         public void DataIsLoaded(List<User> users, List<String> keys) {
 
@@ -152,12 +180,6 @@ public class IntroActivity extends AppCompatActivity implements UserRecyclerAdap
                 }
 
                 enterRoom(chosenRoom,chosenName,user_name);
-            }
-        });
-        exit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FirebaseAuth.getInstance().signOut();
             }
         });
     }
